@@ -21,7 +21,7 @@ public class EducacionService {
         return educacionRepo.save(educacion);
     }
     
-    public List<Educacion> buscarEducaciones(Long id){
+    public List<Educacion> buscarEducaciones(){
         return educacionRepo.findAll();
     }
     

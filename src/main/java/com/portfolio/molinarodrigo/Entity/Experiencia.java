@@ -11,17 +11,21 @@ public class Experiencia {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idExp;
     private String tituloExp;
+    private String subtituloExp;
     private int fechaExp;
+    private int fechaFinExp;
     private String descExp;
     private String imagenExp;
 
     public Experiencia() {
     }
 
-    public Experiencia(Long idExp, String tituloExp, int fechaExp, String descExp, String imagenExp) {
+    public Experiencia(Long idExp, String tituloExp, String subtituloExp, int fechaExp, int fechaFinExp, String descExp, String imagenExp) {
         this.idExp = idExp;
         this.tituloExp = tituloExp;
+        this.subtituloExp = subtituloExp;
         this.fechaExp = fechaExp;
+        this.fechaFinExp = fechaExp;
         this.descExp = descExp;
         this.imagenExp = imagenExp;
     }
@@ -41,6 +45,14 @@ public class Experiencia {
     public void setTituloExp(String tituloExp) {
         this.tituloExp = tituloExp;
     }
+    
+    public String getSubtituloExp() {
+        return subtituloExp;
+    }
+
+    public void setSubituloExp(String subtituloExp) {
+        this.subtituloExp = subtituloExp;
+    }
 
     public int getFechaExp() {
         return fechaExp;
@@ -48,6 +60,14 @@ public class Experiencia {
 
     public void setFechaExp(int fechaExp) {
         this.fechaExp = fechaExp;
+    }
+    
+    public int getFechaFinExp() {
+        return fechaFinExp;
+    }
+
+    public void setFechaFinExp(int fechaFinExp) {
+        this.fechaFinExp = fechaFinExp;
     }
 
     public String getDescExp() {
