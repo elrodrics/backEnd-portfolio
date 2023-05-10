@@ -1,7 +1,7 @@
 package com.portfolio.molinarodrigo.Controller;
 
 import com.portfolio.molinarodrigo.Entity.Usuario;
-import com.portfolio.molinarodrigo.Service.UsuarioService;
+import com.portfolio.molinarodrigo.Service.PersonaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioController {
-    private final UsuarioService usuarioService;
+    private final PersonaService usuarioService;
     
-    public UsuarioController(UsuarioService usuarioService){
+    public UsuarioController(PersonaService usuarioService){
         this.usuarioService = usuarioService;
     }
     
