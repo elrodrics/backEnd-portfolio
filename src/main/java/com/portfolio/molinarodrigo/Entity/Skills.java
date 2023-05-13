@@ -8,44 +8,33 @@ import jakarta.persistence.Id;
 @Entity
 public class Skills {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idSkill;
-    private String nombreSkill;
-    private String fotoSkill;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String nombre;
     private int porcentaje;
 
     public Skills() {
     }
 
-    public Skills(Long idSkill, String nombreSkill, String fotoSkill, int porcentaje) {
-        this.idSkill = idSkill;
-        this.nombreSkill = nombreSkill;
-        this.fotoSkill = fotoSkill;
+    public Skills(String nombre, int porcentaje) {
+        this.nombre = nombre;
         this.porcentaje = porcentaje;
     }
 
-    public Long getIdSkill() {
-        return idSkill;
+    public int getId() {
+        return id;
     }
 
-    public void setIdSkill(Long idSkill) {
-        this.idSkill = idSkill;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombreSkill() {
-        return nombreSkill;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreSkill(String nombreSkill) {
-        this.nombreSkill = nombreSkill;
-    }
-
-    public String getFotoSkill() {
-        return fotoSkill;
-    }
-
-    public void setFotoSkill(String fotoSkill) {
-        this.fotoSkill = fotoSkill;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getPorcentaje() {
@@ -55,6 +44,5 @@ public class Skills {
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
     }
-    
-    
+
 }

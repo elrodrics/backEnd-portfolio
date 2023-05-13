@@ -1,43 +1,27 @@
-package com.portfolio.molinarodrigo.Entity;
+package com.portfolio.molinarodrigo.Dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import java.util.Date;
 
 
-@Entity
-public class Proyectos {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idProye;
-    @NotNull
+public class dtoProyectos {
+    @NotBlank
     private String tituloProye;
-    @NotNull
+    @NotBlank
     private String subtituloProye;
-    @NotNull
+    @NotBlank
     private Date fechaProye;
-    @NotNull
+    @NotBlank
     private String descProye;
-
-    public Proyectos() {
+    
+    public dtoProyectos() {
     }
-
-    public Proyectos(String tituloProye, String subtituloProye, Date fechaProye, String descProye) {
+    
+    public dtoProyectos(String tituloProye, String subtituloProye, Date fechaProye, Date fechaFinProye, String descProye) {
         this.tituloProye = tituloProye;
         this.subtituloProye = subtituloProye;
         this.fechaProye = fechaProye;
         this.descProye = descProye;
-    }
-
-    public int getIdProye() {
-        return idProye;
-    }
-
-    public void setIdProye(int idProye) {
-        this.idProye = idProye;
     }
 
     public String getTituloProye() {
@@ -47,7 +31,7 @@ public class Proyectos {
     public void setTituloProye(String tituloProye) {
         this.tituloProye = tituloProye;
     }
-    
+
     public String getSubtituloProye() {
         return subtituloProye;
     }
@@ -55,7 +39,7 @@ public class Proyectos {
     public void setSubtituloProye(String subtituloProye) {
         this.subtituloProye = subtituloProye;
     }
-    
+
     public Date getFechaProye() {
         return fechaProye;
     }
@@ -71,6 +55,5 @@ public class Proyectos {
     public void setDescProye(String descProye) {
         this.descProye = descProye;
     }
-    
-    
+
 }

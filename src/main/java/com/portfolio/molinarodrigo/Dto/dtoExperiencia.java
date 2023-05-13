@@ -1,47 +1,34 @@
-package com.portfolio.molinarodrigo.Entity;
+package com.portfolio.molinarodrigo.Dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import java.util.Date;
 
-@Entity
-public class Experiencia {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idExp;
-    @NotNull
+
+public class dtoExperiencia {
+    @NotBlank
     private String tituloExp;
-    @NotNull
+    @NotBlank
     private String subtituloExp;
-    @NotNull
+    @NotBlank
     private Date fechaExp;
-    @NotNull
+    @NotBlank
     private Date fechaFinExp;
-    @NotNull
+    @NotBlank
     private String descExp;
+    @NotBlank
     private String imagenExp;
-
-    public Experiencia() {
+    @NotBlank
+    
+    public dtoExperiencia() {
     }
-
-    public Experiencia(String tituloExp, String subtituloExp, Date fechaExp, Date fechaFinExp, String descExp, String imagenExp) {
+    
+    public dtoExperiencia(String tituloExp, String subtituloExp, Date fechaExp, Date fechaFinExp, String descExp, String imagenExp) {
         this.tituloExp = tituloExp;
         this.subtituloExp = subtituloExp;
         this.fechaExp = fechaExp;
         this.fechaFinExp = fechaFinExp;
         this.descExp = descExp;
         this.imagenExp = imagenExp;
-    }
-
-    public int getIdExp() {
-        return idExp;
-    }
-
-    public void setIdExp(int idExp) {
-        this.idExp = idExp;
     }
 
     public String getTituloExp() {
@@ -51,7 +38,7 @@ public class Experiencia {
     public void setTituloExp(String tituloExp) {
         this.tituloExp = tituloExp;
     }
-    
+
     public String getSubtituloExp() {
         return subtituloExp;
     }

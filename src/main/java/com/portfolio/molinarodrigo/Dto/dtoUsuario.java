@@ -1,45 +1,29 @@
-package com.portfolio.molinarodrigo.Entity;
+package com.portfolio.molinarodrigo.Dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import java.io.Serializable;
-import java.util.List;
+import jakarta.validation.constraints.NotBlank;
 
-@Entity
-public class Usuario implements Serializable{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable=false, updatable=false)
-    private Long id;
+
+public class dtoUsuario {
+    @NotBlank
     private String nombre;
+    @NotBlank
     private String apellido;
+    @NotBlank
     private String titulo;
+    @NotBlank
     private String descripcion;
+    @NotBlank
     private String fotoPerfil;
-    
-    public Usuario() {
+
+    public dtoUsuario() {
     }
 
-    public Usuario(Long id, String nombre, String apellido, String titulo, String descripcion, String fotoPerfil) {
-        this.id = id;
+    public dtoUsuario(String nombre, String apellido, String titulo, String descripcion, String fotoPerfil) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.fotoPerfil = fotoPerfil;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNombre() {

@@ -1,33 +1,24 @@
-package com.portfolio.molinarodrigo.Entity;
+package com.portfolio.molinarodrigo.Dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import java.util.Date;
 
 
-@Entity
-public class Educacion {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idEdu;
-    @NotNull
+public class dtoEducacion {
+    @NotBlank
     private String tituloEdu;
-    @NotNull
+    @NotBlank
     private String subtituloEdu;
-    @NotNull
+    @NotBlank
     private Date fechaEdu;
-    @NotNull
+    @NotBlank
     private Date fechaFinEdu;
+    @NotBlank
     private String descEdu;
+    @NotBlank
     private String imagenEdu;
 
-    public Educacion() {
-    }
-
-    public Educacion (String tituloEdu, String subtituloEdu, Date fechaEdu, Date fechaFinEdu, String descEdu, String imagenEdu) {
+    public dtoEducacion(String tituloEdu, String subtituloEdu, Date fechaEdu, Date fechaFinEdu, String descEdu, String imagenEdu) {
         this.tituloEdu = tituloEdu;
         this.subtituloEdu = subtituloEdu;
         this.fechaEdu = fechaEdu;
@@ -36,30 +27,22 @@ public class Educacion {
         this.imagenEdu = imagenEdu;
     }
 
-    public int getIdEdu() {
-        return idEdu;
-    }
-
-    public void setIdEdu(int idEdu) {
-        this.idEdu = idEdu;
-    }
-
     public String getTituloEdu() {
         return tituloEdu;
     }
-    
+
     public void setTituloEdu(String tituloEdu) {
         this.tituloEdu = tituloEdu;
     }
-    
-    public void setSubtituloEdu(String subtituloEdu){
-        this.subtituloEdu = subtituloEdu;
-    }
-    
+
     public String getSubtituloEdu() {
         return subtituloEdu;
     }
-    
+
+    public void setSubtituloEdu(String subtituloEdu) {
+        this.subtituloEdu = subtituloEdu;
+    }
+
     public Date getFechaEdu() {
         return fechaEdu;
     }
@@ -67,7 +50,7 @@ public class Educacion {
     public void setFechaEdu(Date fechaEdu) {
         this.fechaEdu = fechaEdu;
     }
-    
+
     public Date getFechaFinEdu() {
         return fechaFinEdu;
     }
