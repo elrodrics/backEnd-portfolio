@@ -80,8 +80,11 @@ public class EducacionController {
         }
         
         Educacion educacion = educacionService.getOne(idEdu).get();
-        
         educacion.setTituloEdu(dtoeducacion.getTituloEdu());
+        educacion.setSubtituloEdu(dtoeducacion.getSubtituloEdu());
+        educacion.setFechaEdu(dtoeducacion.getFechaEdu());
+        educacion.setFechaFinEdu(dtoeducacion.getFechaFinEdu());
+        educacion.setImagenEdu(dtoeducacion.getImagenEdu());
         educacion.setDescEdu(dtoeducacion.getDescEdu());
         
         educacionService.save(educacion);

@@ -34,9 +34,9 @@ public class ExperienciaController {
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    
     @GetMapping("/detail/{idExp}")
-    public ResponseEntity<Experiencia> getById(@PathVariable("id") int idExp) {
+    public ResponseEntity<Experiencia> getById(@PathVariable("idExp") int idExp) {
         if (!experienciaService.existsById(idExp)) {
             return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
         }
@@ -44,9 +44,9 @@ public class ExperienciaController {
         return new ResponseEntity(experiencia, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    
     @DeleteMapping("/delete/{idExp}")
-    public ResponseEntity<?> delete(@PathVariable("id") int idExp) {
+    public ResponseEntity<?> delete(@PathVariable("idExp") int idExp) {
         if (!experienciaService.existsById(idExp)) {
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
         }
@@ -68,7 +68,7 @@ public class ExperienciaController {
         return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    
     @PutMapping("/update/{idExp}")
     public ResponseEntity<?> update(@PathVariable("idExp") int idExp, @RequestBody dtoExperiencia dtoexp) {
         //Validamos si existe el ID

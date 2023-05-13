@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -18,6 +20,7 @@ public class Proyectos {
     @NotNull
     private String subtituloProye;
     @NotNull
+    @Temporal(TemporalType.DATE)
     private Date fechaProye;
     @NotNull
     private String descProye;

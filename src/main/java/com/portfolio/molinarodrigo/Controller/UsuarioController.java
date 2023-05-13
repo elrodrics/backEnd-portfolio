@@ -60,7 +60,6 @@ public class UsuarioController {
         }
         
         Usuario usuario = usuarioService.getOne(id).get();
-        
         usuario.setNombre(dtousuario.getNombre());
         usuario.setApellido(dtousuario.getApellido());
         usuario.setTitulo(dtousuario.getTitulo());

@@ -61,7 +61,7 @@ public class SkillsController {
             return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Skills skills = new Skills(dtoskills.getNombre(), dtoskills.getPorcentaje());
+        Skills skills = new Skills(dtoskills.getNombre(), dtoskills.getPorcentaje(), dtoskills.getImagenSkill());
         skillsService.save(skills);
 
         return new ResponseEntity(new Mensaje("Skill agregada"), HttpStatus.OK);
@@ -86,6 +86,7 @@ public class SkillsController {
         Skills skills = skillsService.getOne(id).get();
         skills.setNombre(dtoskills.getNombre());
         skills.setPorcentaje(dtoskills.getPorcentaje());
+        skills.setImagenSkill(dtoskills.getImagenSkill());
 
         skillsService.save(skills);
         return new ResponseEntity(new Mensaje("La Skill ha sido actualizada"), HttpStatus.OK);

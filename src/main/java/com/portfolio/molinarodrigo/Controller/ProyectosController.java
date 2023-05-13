@@ -35,19 +35,19 @@ public class ProyectosController {
     }
     
     @GetMapping("/detail/{idProye}")
-    public ResponseEntity<Proyectos> getById(@PathVariable("id") int id){
-        if(!proyectosService.existsById(id))
+    public ResponseEntity<Proyectos> getById(@PathVariable("idProye") int idProye){
+        if(!proyectosService.existsById(idProye))
             return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
-        Proyectos proyectos = proyectosService.getOne(id).get();
+        Proyectos proyectos = proyectosService.getOne(idProye).get();
         return new ResponseEntity(proyectos, HttpStatus.OK);
     }
     
     @DeleteMapping("/delete/{idProye}")
-    public ResponseEntity<?> delete(@PathVariable("id") int id) {
-        if (!proyectosService.existsById(id)) {
+    public ResponseEntity<?> delete(@PathVariable("idProye") int idProye) {
+        if (!proyectosService.existsById(idProye)) {
             return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
         }
-        proyectosService.delete(id);
+        proyectosService.delete(idProye);
         return new ResponseEntity(new Mensaje("producto eliminado"), HttpStatus.OK);
     }
 
@@ -66,7 +66,7 @@ public class ProyectosController {
     }
     
     @PutMapping("/update/{idProye}")
-    public ResponseEntity<?> update(@PathVariable("id") int idProye, @RequestBody dtoProyectos dtoproye){
+    public ResponseEntity<?> update(@PathVariable("idProye") int idProye, @RequestBody dtoProyectos dtoproye){
         //Validamos si existe el ID
         if(!proyectosService.existsById(idProye))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
