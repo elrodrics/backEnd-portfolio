@@ -70,5 +70,22 @@ public class UsuarioController {
         
         return new ResponseEntity(new Mensaje("El usuario ha sido actualizado"), HttpStatus.OK);
     }
+    
+    @PostMapping("/create")
+    public ResponseEntity<?> create(@RequestBody dtoUsuario dtousuario){
+        if(StringUtils.isBlank(dtousuario.getNombre())){
+            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
+        if(usuarioService.existsByNombre(dtousuario.getNombre())){
+            return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
+        }
+        
+        Usuario usuario = new Usuario(
+                dtousuario.getNombre(), dtousuario.getApellido(), dtousuario.getTitulo(), dtousuario.getDescripcion(), dtousuario.getFotoPerfil()
+            );
+        usuarioService.save(usuario);
+        return new ResponseEntity(new Mensaje("Usuario creada"), HttpStatus.OK);
+                
+    }
 
 }
