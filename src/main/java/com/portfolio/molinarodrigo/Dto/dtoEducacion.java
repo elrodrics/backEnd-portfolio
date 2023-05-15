@@ -1,5 +1,7 @@
 package com.portfolio.molinarodrigo.Dto;
 
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.NotBlank;
 import java.util.Date;
 
@@ -10,8 +12,10 @@ public class dtoEducacion {
     @NotBlank
     private String subtituloEdu;
     @NotBlank
+    @Temporal(TemporalType.DATE)
     private Date fechaEdu;
     @NotBlank
+    @Temporal(TemporalType.DATE)
     private Date fechaFinEdu;
     @NotBlank
     private String descEdu;
