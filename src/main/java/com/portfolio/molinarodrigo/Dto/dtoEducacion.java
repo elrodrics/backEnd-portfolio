@@ -31,6 +31,9 @@ public class dtoEducacion {
         this.imagenEdu = imagenEdu;
     }
 
+    public dtoEducacion() {
+    }
+    
     public String getTituloEdu() {
         return tituloEdu;
     }
